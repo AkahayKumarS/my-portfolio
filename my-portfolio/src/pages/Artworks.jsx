@@ -28,29 +28,29 @@ const artworks = [
       "A detailed illustration of a mystical forest with glowing flora and fauna.",
     category: "Illustration",
   },
-  {
-    id: 4,
-    title: "Urban Chaos",
-    image: "/img/artworks/artwork4.jpg",
-    description: "A gritty, monochromatic sketch of a bustling cityscape.",
-    category: "Sketch",
-  },
-  {
-    id: 5,
-    title: "Celestial Harmony",
-    image: "/img/artworks/artwork5.jpg",
-    description:
-      "A cosmic-themed artwork featuring planets, stars, and galaxies.",
-    category: "Digital Art",
-  },
-  {
-    id: 6,
-    title: "Abstract Emotions",
-    image: "/img/artworks/artwork6.jpg",
-    description:
-      "An abstract piece representing human emotions through shapes and colors.",
-    category: "Abstract",
-  },
+  // {
+  //   id: 4,
+  //   title: "Urban Chaos",
+  //   image: "/img/artworks/artwork4.jpg",
+  //   description: "A gritty, monochromatic sketch of a bustling cityscape.",
+  //   category: "Sketch",
+  // },
+  // {
+  //   id: 5,
+  //   title: "Celestial Harmony",
+  //   image: "/img/artworks/artwork5.jpg",
+  //   description:
+  //     "A cosmic-themed artwork featuring planets, stars, and galaxies.",
+  //   category: "Digital Art",
+  // },
+  // {
+  //   id: 6,
+  //   title: "Abstract Emotions",
+  //   image: "/img/artworks/artwork6.jpg",
+  //   description:
+  //     "An abstract piece representing human emotions through shapes and colors.",
+  //   category: "Abstract",
+  // },
 ];
 
 const categories = ["All", ...new Set(artworks.map((art) => art.category))];
