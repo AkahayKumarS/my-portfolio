@@ -42,12 +42,49 @@ const ContactMe = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // Handle form submission
-  const handleSubmit = async (e) => {
+  // // Handle form submission
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+
+  //   const formURL = import.meta.env.VITE_GOOGLE_FORM_URL;
+
+  //   const formDataEncoded = new URLSearchParams();
+  //   formDataEncoded.append(import.meta.env.VITE_ENTRY_NAME, formData.name);
+  //   formDataEncoded.append(import.meta.env.VITE_ENTRY_EMAIL, formData.email);
+  //   formDataEncoded.append(
+  //     import.meta.env.VITE_ENTRY_MESSAGE,
+  //     formData.message
+  //   );
+
+  //   try {
+  //     await fetch(formURL, {
+  //       method: "POST",
+  //       body: formDataEncoded,
+  //       headers: { "Content-Type": "application/x-www-form-urlencoded" },
+  //       mode: "no-cors",
+  //     });
+
+  //     setStatus("Success! Your message has been sent.");
+  //     setFormData({ name: "", email: "", message: "" });
+
+  //     // Clear status after 3 seconds
+  //     setTimeout(() => {
+  //       setStatus("");
+  //     }, 3000);
+  //   } catch (error) {
+  //     setStatus("Error! Please try again.");
+
+  //     // Clear status after 3 seconds
+  //     setTimeout(() => {
+  //       setStatus("");
+  //     }, 3000);
+  //   }
+  // };
+
+  const handleSubmit = (e) => {
     e.preventDefault();
 
     const formURL = import.meta.env.VITE_GOOGLE_FORM_URL;
-
     const formDataEncoded = new URLSearchParams();
     formDataEncoded.append(import.meta.env.VITE_ENTRY_NAME, formData.name);
     formDataEncoded.append(import.meta.env.VITE_ENTRY_EMAIL, formData.email);
@@ -56,29 +93,8 @@ const ContactMe = () => {
       formData.message
     );
 
-    try {
-      await fetch(formURL, {
-        method: "POST",
-        body: formDataEncoded,
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        mode: "no-cors",
-      });
-
-      setStatus("Success! Your message has been sent.");
-      setFormData({ name: "", email: "", message: "" });
-
-      // Clear status after 3 seconds
-      setTimeout(() => {
-        setStatus("");
-      }, 3000);
-    } catch (error) {
-      setStatus("Error! Please try again.");
-
-      // Clear status after 3 seconds
-      setTimeout(() => {
-        setStatus("");
-      }, 3000);
-    }
+    // Redirect user to the Google Form submission page
+    window.location.href = `${formURL}?${formDataEncoded.toString()}`;
   };
 
   // Animation variants
