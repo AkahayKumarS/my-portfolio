@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+/* Light Mode */
+body.light {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* Dark Mode */
+body.dark {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+/* Additional Theme-Specific Styles */
+body.dark .card {
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+
+body.light .card {
+  background-color: #f0f0f0;
+  color: #000000;
+}
+
+.home-img .img-box {
+  position: relative;
+  width: 35vw;
+  height: 35vw;
+  border-radius: 50%;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.home-img .img-box::before,
+.home-img .img-box::after {
+  content: "";
+  position: absolute;
+  width: 50rem;
+  height: 50rem;
+  background: conic-gradient(transparent, transparent, transparent, #3cd2fbaa);
+  transform: rotate(0deg);
+  animation: rotate-border 10s linear infinite;
+}
+
+.home-img .img-box::after {
+  animation-delay: -5s;
+}
+
+@keyframes rotate-border {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.home-img .img-box .img-item {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #19163c;
+  border-radius: 50%;
+  border: 0.01rem solid #19163c;
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.home-img .img-box .img-item img {
+  position: absolute;
+  top: 0rem;
+  display: block;
+  width: 82%;
+  object-fit: cover;
+  mix-blend-mode: lighten;
+}
