@@ -56,8 +56,8 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* About Section */}
-          <div className="space-y-6">
-            <div className="flex items-center space-x-2">
+          <div className="space-y-6 text-center md:text-left">
+            <div className="flex items-center justify-center md:justify-start space-x-2">
               <div
                 className={`w-10 h-10 ${
                   isDark ? "bg-blue-500" : "bg-sky-500"
@@ -74,14 +74,14 @@ const Footer = () => {
               </h2>
             </div>
             <p
-              className={`text-sm ${
+              className={`text-sm px-4 md:px-0 ${
                 isDark ? "text-gray-400" : "text-gray-600"
               }`}
             >
               A CSE student, web developer, and artist passionate about crafting
               innovative digital solutions and expressive artworks.
             </p>
-            <div className="flex space-x-4">
+            <div className="flex justify-center md:justify-start space-x-4">
               {socialLinks.map(({ Icon, href, label }) => (
                 <a
                   key={label}
@@ -102,7 +102,7 @@ const Footer = () => {
           </div>
 
           {/* Quick Links */}
-          <div className="ml-10">
+          <div className="text-center md:text-left md:ml-10">
             <h3
               className={`text-lg font-semibold mb-4 ${
                 isDark ? "text-white" : "text-gray-900"
@@ -112,10 +112,13 @@ const Footer = () => {
             </h3>
             <ul className="space-y-2">
               {quickLinks.map(({ label, path }) => (
-                <li key={label}>
+                <li
+                  key={label}
+                  className="flex justify-center md:justify-start"
+                >
                   <Link
                     to={path}
-                    className={`flex items-center group ${
+                    className={`flex items-center group w-max ${
                       isDark
                         ? "text-gray-400 hover:text-blue-400"
                         : "text-gray-600 hover:text-sky-600"
@@ -137,7 +140,7 @@ const Footer = () => {
           </div>
 
           {/* Services */}
-          <div>
+          <div className="text-center md:text-left">
             <h3
               className={`text-lg font-semibold mb-4 ${
                 isDark ? "text-white" : "text-gray-900"
@@ -147,9 +150,12 @@ const Footer = () => {
             </h3>
             <ul className="space-y-2">
               {services.map((service) => (
-                <li key={service}>
+                <li
+                  key={service}
+                  className="flex justify-center md:justify-start"
+                >
                   <span
-                    className={`flex items-center group ${
+                    className={`flex items-center group w-max ${
                       isDark ? "text-gray-400" : "text-gray-600"
                     }`}
                   >
@@ -169,9 +175,9 @@ const Footer = () => {
           </div>
 
           {/* Contact Info */}
-          <div>
+          <div className="text-center md:text-left">
             <h3
-              className={`text-lg font-semibold mb-4 ${
+              className={`text-lg font-semibbol mb-4 ${
                 isDark ? "text-white" : "text-gray-900"
               }`}
             >
@@ -187,7 +193,7 @@ const Footer = () => {
                 {
                   Icon: Phone,
                   content: "+91 9108083054",
-                  href: "tel:+1234567890",
+                  href: "tel:+919108083054",
                 },
                 {
                   Icon: MapPin,
@@ -200,7 +206,7 @@ const Footer = () => {
                   <a
                     key={content}
                     href={href}
-                    className={`flex items-center space-x-3 transition-colors duration-500 ${
+                    className={`flex items-center justify-center md:justify-start space-x-3 transition-colors duration-500 ${
                       isDark
                         ? "text-gray-400 hover:text-blue-400"
                         : "text-gray-600 hover:text-sky-600"
@@ -214,7 +220,7 @@ const Footer = () => {
                 ) : (
                   <div
                     key={content}
-                    className={`flex items-center space-x-3 ${
+                    className={`flex items-center justify-center md:justify-start space-x-3 ${
                       isDark ? "text-gray-400" : "text-gray-600"
                     }`}
                   >
