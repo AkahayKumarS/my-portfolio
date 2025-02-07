@@ -61,12 +61,14 @@ const Home = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+          {/* Left Content */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="order-2 lg:order-1"
+            className="order-2 lg:order-1 z-10"
           >
+            {/* Previous content remains the same */}
             <motion.div
               className="mb-4"
               initial={{ opacity: 0, y: 20 }}
@@ -83,7 +85,6 @@ const Home = () => {
                 👋 Welcome to my portfolio
               </span>
             </motion.div>
-
             <h1
               className={`text-3xl sm:text-4xl lg:text-5xl font-bold ${
                 isDark ? "text-white" : "text-gray-900"
@@ -215,6 +216,7 @@ const Home = () => {
                 <img src="./img/leetcode.png" alt="leetcode" />
               </motion.a>
             </motion.div>
+            {/* ... */}
           </motion.div>
 
           {/* Right Content - Photo */}
@@ -222,21 +224,21 @@ const Home = () => {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="relative flex justify-center items-center order-1 lg:order-2 mb-8 lg:mb-0"
+            className="relative flex justify-center items-center order-1 lg:order-2 mb-8 lg:mb-0 w-full"
           >
-            <div className="relative w-full max-w-md aspect-square mx-auto">
+            <div className="relative w-full max-w-md sm:max-w-lg md:max-w-xl mx-auto">
               <div
-                className={`absolute -inset-4 ${
+                className={`absolute -inset-4 sm:-inset-6 ${
                   theme === "light" ? "bg-blue-400/30" : "bg-blue-500/30"
                 } rounded-full blur-3xl`}
               />
-              <div className="home-img">
-                <div className="img-box">
-                  <div className="img-item">
+              <div className="home-img w-full">
+                <div className="img-box w-full aspect-square">
+                  <div className="img-item w-full h-full">
                     <img
                       src="./img/home.png"
                       alt="akshay"
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover shadow-lg"
                     />
                   </div>
                 </div>

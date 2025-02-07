@@ -1,242 +1,258 @@
-import React, { useContext, useState } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ThemeContext } from "../ThemeContext"; // Import ThemeContext
+import About from "./About";
+import Projects from "./Projects";
+import Artworks from "./Artworks";
+import ContactMe from "./ContactMe";
+
 import {
-  Mail,
-  Phone,
-  MapPin,
+  ArrowRight,
   Github,
   Linkedin,
-  Contact,
   Instagram,
+  Mail,
+  Download,
 } from "lucide-react";
+import { ThemeContext } from "../ThemeContext";
 
-const ContactMe = () => {
-  const { theme } = useContext(ThemeContext); // Access the current theme
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-  const [status, setStatus] = useState("");
+const Home = () => {
+  const { theme } = useContext(ThemeContext);
+  const isDark = theme === "dark";
 
-  // Define colors based on the theme
-  const backgroundGradient =
-    theme === "light"
-      ? "bg-gradient-to-b from-gray-50 to-white"
-      : "bg-gradient-to-b from-gray-900 to-gray-800";
-  const textColor = theme === "light" ? "text-gray-800" : "text-gray-200";
-  const cardBackground = theme === "light" ? "bg-white" : "bg-gray-800";
-  const inputBackground = theme === "light" ? "bg-gray-100" : "bg-gray-700";
-  const inputTextColor = theme === "light" ? "text-gray-800" : "text-gray-200";
-  const buttonBackground = "bg-gradient-to-r from-blue-600 to-purple-600";
-  const hoverButtonBackground =
-    theme === "light" ? "hover:bg-blue-700" : "hover:bg-blue-500";
+  const [typedSkill, setTypedSkill] = useState("");
+  const skills = [
+    "Web Development",
+    "Competitive Programming",
+    "Portrait Painting",
+    "Clay Modelling",
+  ];
+  const [currentSkillIndex, setCurrentSkillIndex] = useState(0);
 
-  // Handle form data changes
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+  useEffect(() => {
+    let skillTimeout;
 
-  // Handle form submission
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    const formURL =
-      "https://docs.google.com/forms/d/e/1FAIpQLSe6FPvuzLvNvafjm6GY65H8XYQ6ELVJhCyMYQdT8SxomhDBeA/formResponse";
-
-    const formDataEncoded = new URLSearchParams();
-    formDataEncoded.append("entry.541044737", formData.name); // Name field
-    formDataEncoded.append("entry.1336941785", formData.email); // Email field
-    formDataEncoded.append("entry.548435149", formData.message); // Message field
-
-    try {
-      await fetch(formURL, {
-        method: "POST",
-        body: formDataEncoded,
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        mode: "no-cors",
-      });
-
-      setStatus("Success! Your message has been sent.");
-      setFormData({ name: "", email: "", message: "" });
-    } catch (error) {
-      setStatus("Error! Please try again.");
+    if (typedSkill.length < skills[currentSkillIndex].length) {
+      skillTimeout = setTimeout(() => {
+        setTypedSkill(
+          skills[currentSkillIndex].slice(0, typedSkill.length + 1)
+        );
+      }, 100);
+    } else {
+      const cycleTimeout = setTimeout(() => {
+        setCurrentSkillIndex((prev) => (prev + 1) % skills.length);
+        setTypedSkill("");
+      }, 2000);
+      return () => clearTimeout(cycleTimeout);
     }
-  };
+
+    return () => {
+      skillTimeout && clearTimeout(skillTimeout);
+    };
+  }, [typedSkill, currentSkillIndex]);
 
   return (
-    <section className={`min-h-screen ${backgroundGradient} py-20 px-4`}>
-      <div className="max-w-6xl mx-auto">
-        {/* Header */}
-        <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: -30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <div className="flex items-center justify-center mb-4">
-            <Contact
-              className={`w-8 h-8 ${
-                theme === "dark" ? "text-blue-400" : "text-blue-600"
-              } mr-3`}
-            />
-            <h1
-              className={`text-5xl font-bold ${
-                theme === "light" ? "text-blue-600" : "text-blue-400"
-              } mb-4`}
-            >
-              Get in Touch
-            </h1>
-          </div>
-          <div
-            className={`w-24 h-1 ${
-              theme === "light" ? "bg-blue-600" : "bg-blue-400"
-            } mx-auto rounded-full mb-6`}
-          />
-          <p
-            className={`${
-              theme === "light" ? "text-gray-600" : "text-gray-300"
-            } max-w-2xl mx-auto`}
+    <div
+      className={`min-h-screen overflow-x-hidden ${
+        isDark
+          ? "bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900"
+          : "bg-gradient-to-br from-blue-50 via-white to-blue-100"
+      } transition-colors duration-500 pt-16`}
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+          {/* Left Content */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="order-2 lg:order-1 z-10"
           >
-            Have a question or want to collaborate? Feel free to reach out! I'm
-            always open to new opportunities and ideas.
-          </p>
-        </motion.div>
+            {/* Previous content remains the same */}
+            <motion.div
+              className="mb-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+            >
+              <span
+                className={`px-4 py-2 rounded-full text-sm font-medium ${
+                  isDark
+                    ? "bg-blue-900/30 text-blue-400"
+                    : "bg-blue-200 text-blue-700"
+                } transition-colors duration-500`}
+              >
+                👋 Welcome to my portfolio
+              </span>
+            </motion.div>
+            <h1
+              className={`text-3xl sm:text-4xl lg:text-5xl font-bold ${
+                isDark ? "text-white" : "text-gray-900"
+              } mb-4 transition-colors duration-500`}
+            >
+              Hi, I'm{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-400">
+                Akshaya Kumar S
+              </span>
+            </h1>
 
-        {/* Contact Content */}
-        <motion.div
-          className="grid md:grid-cols-2 gap-12"
-          initial="hidden"
-          animate="show"
-        >
-          {/* Contact Information */}
-          <motion.div className={`${cardBackground} rounded-xl shadow-lg p-8`}>
-            <h2 className={`text-2xl font-bold ${textColor} mb-6`}>
-              Contact Information
-            </h2>
-            <div className="space-y-6">
-              {/* Email */}
-              <div className="flex items-center gap-4">
-                <div className={`p-3 ${inputBackground} rounded-lg`}>
-                  <Mail
-                    className={`w-6 h-6 ${
-                      theme === "light" ? "text-blue-600" : "text-blue-400"
-                    }`}
-                  />
-                </div>
-                <div>
-                  <h3 className={`text-lg font-semibold ${textColor}`}>
-                    Email
-                  </h3>
-                  <p className={`${textColor}`}>akshaykumars9108@gmail.com</p>
-                </div>
-              </div>
+            <div className="h-16">
+              <motion.h2
+                className={`text-xl sm:text-2xl ${
+                  isDark ? "text-gray-300" : "text-gray-700"
+                } transition-colors duration-500`}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.4 }}
+              >
+                My skills are{" "}
+                <span
+                  className={`${isDark ? "text-pink-400" : "text-violet-500"}`}
+                >
+                  {typedSkill}
+                </span>
+                <span
+                  className={`${
+                    isDark ? "text-pink-300" : "text-violet-400"
+                  } animate-pulse`}
+                >
+                  |
+                </span>
+              </motion.h2>
+            </div>
 
-              {/* Phone */}
-              <div className="flex items-center gap-4">
-                <div className={`p-3 ${inputBackground} rounded-lg`}>
-                  <Phone
-                    className={`w-6 h-6 ${
-                      theme === "light" ? "text-blue-600" : "text-blue-400"
-                    }`}
-                  />
-                </div>
-                <div>
-                  <h3 className={`text-lg font-semibold ${textColor}`}>
-                    Phone
-                  </h3>
-                  <p className={`${textColor}`}>+91 9108083054</p>
-                </div>
-              </div>
+            <motion.p
+              className={`text-base sm:text-lg ${
+                isDark ? "text-gray-300" : "text-gray-600"
+              } mb-6 transition-colors duration-500`}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.6 }}
+            >
+              A CSE student and artist passionate about building innovative web
+              solutions and crafting visually stunning digital experiences.
+              Blending technology and creativity to solve real-world problems.
+            </motion.p>
 
-              {/* Location */}
-              <div className="flex items-center gap-4">
-                <div className={`p-3 ${inputBackground} rounded-lg`}>
-                  <MapPin
-                    className={`w-6 h-6 ${
-                      theme === "light" ? "text-blue-600" : "text-blue-400"
-                    }`}
-                  />
-                </div>
-                <div>
-                  <h3 className={`text-lg font-semibold ${textColor}`}>
-                    Location
-                  </h3>
-                  <p className={`${textColor}`}>
-                    Kundapura, Udupi District, Karnataka, India
-                  </p>
+            {/* CTA Buttons */}
+            <motion.div
+              className="flex flex-col sm:flex-row gap-4 mb-8"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1 }}
+            >
+              <Link
+                to="/projects"
+                className="group px-6 py-3 rounded-xl flex items-center justify-center gap-2 transition-all duration-500 transform hover:scale-105 bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:shadow-md shadow-lg shadow-blue-600/30"
+              >
+                View Projects
+                <ArrowRight className="group-hover:translate-x-1 transition-transform" />
+              </Link>
+
+              <a
+                href="./img/My_Resume_Latest.pdf"
+                className={`px-6 py-3 rounded-xl flex items-center justify-center gap-2 transition-all duration-500 transform hover:scale-105 ${
+                  isDark
+                    ? "border-2 border-gray-700 text-gray-300 hover:bg-gray-800 shadow-lg"
+                    : "border-2 border-blue-300 text-blue-700 hover:bg-blue-100 shadow-lg"
+                } shadow-blue-600/30 hover:shadow-md`}
+                target="_blank"
+              >
+                Download Resume
+                <Download size={18} />
+              </a>
+            </motion.div>
+
+            {/* Social Links */}
+            <motion.div
+              className="flex items-center justify-center sm:justify-start gap-4"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1.2 }}
+            >
+              {[
+                {
+                  Icon: Github,
+                  href: "https://github.com/AkahayKumarS",
+                  label: "GitHub",
+                },
+                {
+                  Icon: Linkedin,
+                  href: "https://www.linkedin.com/in/akshaya-kumar-s/",
+                  label: "LinkedIn",
+                },
+                {
+                  Icon: Instagram,
+                  href: "https://www.instagram.com/akshaykumars836/",
+                  label: "Instagram",
+                },
+              ].map(({ Icon, href, label }) => (
+                <motion.a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                  className={`p-3 rounded-xl transition-all duration-500 ${
+                    isDark
+                      ? "bg-gray-800 text-gray-300 hover:text-blue-400 hover:bg-gray-700"
+                      : "bg-blue-100 text-blue-700 hover:text-blue-800 hover:bg-blue-200"
+                  } shadow-md hover:shadow-lg`}
+                >
+                  <Icon size={20} />
+                </motion.a>
+              ))}
+              <motion.a
+                href="https://leetcode.com/u/AkshayKumarS9108/"
+                target="_blank"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+                className={`p-3 w-11 rounded-xl transition-all duration-500 ${
+                  isDark
+                    ? "bg-gray-800 text-gray-300 hover:text-blue-400 hover:bg-gray-700"
+                    : "bg-blue-100 text-blue-700 hover:text-blue-800 hover:bg-blue-200"
+                } shadow-md hover:shadow-lg`}
+              >
+                <img src="./img/leetcode.png" alt="leetcode" />
+              </motion.a>
+            </motion.div>
+            {/* ... */}
+          </motion.div>
+
+          {/* Right Content - Photo */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="relative flex justify-center items-center order-1 lg:order-2 mb-8 lg:mb-0 w-full"
+          >
+            <div className="relative w-full max-w-md sm:max-w-lg md:max-w-xl mx-auto">
+              <div
+                className={`absolute -inset-4 sm:-inset-6 ${
+                  theme === "light" ? "bg-blue-400/30" : "bg-blue-500/30"
+                } rounded-full blur-3xl`}
+              />
+              <div className="home-img w-full">
+                <div className="img-box w-full aspect-square">
+                  <div className="img-item w-full h-full">
+                    <img
+                      src="./img/home.png"
+                      alt="akshay"
+                      className="w-full h-full object-cover rounded-full shadow-lg"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
           </motion.div>
-
-          {/* Contact Form */}
-          <motion.div className={`${cardBackground} rounded-xl shadow-lg p-8`}>
-            <h2 className={`text-2xl font-bold ${textColor} mb-6`}>
-              Send Me a Message
-            </h2>
-            <form className="space-y-6" onSubmit={handleSubmit}>
-              <div>
-                <label
-                  className={`block text-sm font-medium ${textColor} mb-2`}
-                >
-                  Name
-                </label>
-                <input
-                  type="text"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className={`w-full ${inputBackground} ${inputTextColor} rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-600`}
-                  placeholder="Enter your name"
-                />
-              </div>
-              <div>
-                <label
-                  className={`block text-sm font-medium ${textColor} mb-2`}
-                >
-                  Email
-                </label>
-                <input
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className={`w-full ${inputBackground} ${inputTextColor} rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-600`}
-                  placeholder="Enter your email"
-                />
-              </div>
-              <div>
-                <label
-                  className={`block text-sm font-medium ${textColor} mb-2`}
-                >
-                  Message
-                </label>
-                <textarea
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  className={`w-full ${inputBackground} ${inputTextColor} rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-600`}
-                  placeholder="Enter your message"
-                />
-              </div>
-              <button
-                type="submit"
-                className={`w-full ${buttonBackground} text-white py-3 rounded-lg ${hoverButtonBackground} transition-colors`}
-              >
-                Send Message
-              </button>
-            </form>
-            {status && <p className="mt-4 text-green-500">{status}</p>}
-          </motion.div>
-        </motion.div>
+        </div>
       </div>
-    </section>
+      <About />
+      <Projects />
+      <Artworks />
+      <ContactMe />
+    </div>
   );
 };
 
-export default ContactMe;
+export default Home;
