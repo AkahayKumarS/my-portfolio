@@ -19,6 +19,7 @@ const ContactMe = () => {
     message: "",
   });
   const [status, setStatus] = useState("");
+  const [messageColor, setMessageColor] = useState("");
 
   useEffect(() => {
     console.log("Google Form URL:", import.meta.env.VITE_GOOGLE_FORM_URL);
@@ -65,6 +66,7 @@ const ContactMe = () => {
       });
 
       setStatus("Success! Your message has been sent.");
+      setMessageColor("text-green-500");
       setFormData({ name: "", email: "", message: "" });
 
       // Clear status after 3 seconds
@@ -73,6 +75,7 @@ const ContactMe = () => {
       }, 3000);
     } catch (error) {
       setStatus("Error! Please try again.");
+      setMessageColor("text-red-500");
 
       // Clear status after 3 seconds
       setTimeout(() => {
@@ -321,7 +324,7 @@ const ContactMe = () => {
                 Send Message
               </button>
             </form>
-            {status && <p className="mt-4 text-green-500">{status}</p>}
+            {status && <p className={`mt-4 ${messageColor}`}>{status}</p>}
           </motion.div>
         </motion.div>
       </div>
