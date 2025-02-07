@@ -17,9 +17,9 @@ const Footer = () => {
   const isDark = theme === "dark";
 
   const quickLinks = [
+    { label: "Home", path: "/" },
     { label: "About", path: "/about" },
     { label: "Projects", path: "/projects" },
-    { label: "Skills", path: "/skills" },
     { label: "Artworks", path: "/artworks" },
     { label: "Contact", path: "/contact" },
   ];
