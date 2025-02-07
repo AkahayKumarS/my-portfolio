@@ -35,6 +35,24 @@ body.light .card {
   overflow: hidden;
 }
 
+@media (min-width: 640px) {
+  .home-img .img-box {
+    width: 50vw;
+    height: 50vw;
+    max-width: 400px;
+    max-height: 400px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .home-img .img-box {
+    width: 35vw;
+    height: 35vw;
+    max-width: 450px;
+    max-height: 450px;
+  }
+}
+
 .home-img .img-box::before,
 .home-img .img-box::after {
   content: "";

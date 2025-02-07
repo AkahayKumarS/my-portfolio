@@ -61,14 +61,11 @@ const Home = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-          {/* Left Content */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="order-2 lg:order-1 z-10"
           >
-            {/* Previous content remains the same */}
             <motion.div
               className="mb-4"
               initial={{ opacity: 0, y: 20 }}
@@ -85,8 +82,9 @@ const Home = () => {
                 👋 Welcome to my portfolio
               </span>
             </motion.div>
+
             <h1
-              className={`text-3xl sm:text-4xl lg:text-5xl font-bold ${
+              className={`text-4xl sm:text-5xl lg:text-6xl font-bold ${
                 isDark ? "text-white" : "text-gray-900"
               } mb-4 transition-colors duration-500`}
             >
@@ -98,7 +96,7 @@ const Home = () => {
 
             <div className="h-16">
               <motion.h2
-                className={`text-xl sm:text-2xl ${
+                className={`text-2xl ${
                   isDark ? "text-gray-300" : "text-gray-700"
                 } transition-colors duration-500`}
                 initial={{ opacity: 0 }}
@@ -122,7 +120,7 @@ const Home = () => {
             </div>
 
             <motion.p
-              className={`text-base sm:text-lg ${
+              className={`text-lg ${
                 isDark ? "text-gray-300" : "text-gray-600"
               } mb-6 transition-colors duration-500`}
               initial={{ opacity: 0 }}
@@ -136,14 +134,14 @@ const Home = () => {
 
             {/* CTA Buttons */}
             <motion.div
-              className="flex flex-col sm:flex-row gap-4 mb-8"
+              className="flex flex-wrap gap-4 mb-8"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1 }}
             >
               <Link
                 to="/projects"
-                className="group px-6 py-3 rounded-xl flex items-center justify-center gap-2 transition-all duration-500 transform hover:scale-105 bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:shadow-md shadow-lg shadow-blue-600/30"
+                className="group px-6 py-3 rounded-xl flex items-center gap-2 transition-all duration-500 transform hover:scale-105 bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:shadow-md shadow-lg shadow-blue-600/30"
               >
                 View Projects
                 <ArrowRight className="group-hover:translate-x-1 transition-transform" />
@@ -151,7 +149,7 @@ const Home = () => {
 
               <a
                 href="./img/My_Resume_Latest.pdf"
-                className={`px-6 py-3 rounded-xl flex items-center justify-center gap-2 transition-all duration-500 transform hover:scale-105 ${
+                className={`px-6 py-3 rounded-xl flex items-center gap-2 transition-all duration-500 transform hover:scale-105 ${
                   isDark
                     ? "border-2 border-gray-700 text-gray-300 hover:bg-gray-800 shadow-lg"
                     : "border-2 border-blue-300 text-blue-700 hover:bg-blue-100 shadow-lg"
@@ -165,7 +163,7 @@ const Home = () => {
 
             {/* Social Links */}
             <motion.div
-              className="flex items-center justify-center sm:justify-start gap-4"
+              className="flex items-center gap-4"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1.2 }}
@@ -216,7 +214,6 @@ const Home = () => {
                 <img src="./img/leetcode.png" alt="leetcode" />
               </motion.a>
             </motion.div>
-            {/* ... */}
           </motion.div>
 
           {/* Right Content - Photo */}
@@ -224,22 +221,18 @@ const Home = () => {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="relative flex justify-center items-center order-1 lg:order-2 mb-8 lg:mb-0 w-full"
+            className="relative flex justify-center items-center"
           >
-            <div className="relative w-full max-w-md sm:max-w-lg md:max-w-xl mx-auto">
+            <div className="relative w-full aspect-square max-w-md mx-auto">
               <div
-                className={`absolute -inset-4 sm:-inset-6 ${
+                className={`absolute -inset-4 ${
                   theme === "light" ? "bg-blue-400/30" : "bg-blue-500/30"
                 } rounded-full blur-3xl`}
               />
-              <div className="home-img w-full">
-                <div className="img-box w-full aspect-square">
-                  <div className="img-item w-full h-full">
-                    <img
-                      src="./img/home.png"
-                      alt="akshay"
-                      className="w-full h-full object-cover rounded-full shadow-lg"
-                    />
+              <div className="home-img">
+                <div className="img-box">
+                  <div className="img-item">
+                    <img src="./img/home.png" alt="akshay" />
                   </div>
                 </div>
               </div>
