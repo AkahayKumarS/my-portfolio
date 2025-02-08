@@ -182,7 +182,7 @@ const Navbar = () => {
                 }`}
               >
                 <div className="flex items-center justify-baseline space-x-3">
-                  <span>Switch to {isDark ? "Light" : "Dark"} Mode</span>
+                  <span>{isDark ? "Light" : "Dark"} Mode</span>
                   {isDark ? <Sun size={18} /> : <Moon size={18} />}
                 </div>
               </motion.button>
