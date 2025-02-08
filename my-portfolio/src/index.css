@@ -22,61 +22,6 @@ body.light .card {
   background-color: #f0f0f0;
   color: #000000;
 }
-/* 
-.home-img .img-box {
-  position: relative;
-  width: 35vw;
-  height: 35vw;
-  border-radius: 50%;
-  padding: 0.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-}
-
-.home-img .img-box::before,
-.home-img .img-box::after {
-  content: "";
-  position: absolute;
-  width: 50rem;
-  height: 50rem;
-  background: conic-gradient(transparent, transparent, transparent, #3cd2fbaa);
-  transform: rotate(0deg);
-  animation: rotate-border 10s linear infinite;
-}
-
-.home-img .img-box::after {
-  animation-delay: -5s;
-}
-
-@keyframes rotate-border {
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-.home-img .img-box .img-item {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  background: #19163c;
-  border-radius: 50%;
-  border: 0.01rem solid #19163c;
-  display: flex;
-  justify-content: center;
-  z-index: 1;
-  overflow: hidden;
-}
-
-.home-img .img-box .img-item img {
-  position: absolute;
-  top: 0rem;
-  display: block;
-  width: 82%;
-  object-fit: cover;
-  mix-blend-mode: lighten;
-} */
 
 /* Base container for the image */
 .home-img {
@@ -89,9 +34,8 @@ body.light .card {
 /* Image box styling with responsive sizes */
 .home-img .img-box {
   position: relative;
-  /* Responsive sizing using clamp */
-  width: clamp(280px, 35vw, 400px);
-  height: clamp(280px, 35vw, 400px);
+  width: 280px;
+  height: 280px;
   border-radius: 50%;
   padding: 0.5rem;
   display: flex;
@@ -105,9 +49,8 @@ body.light .card {
 .home-img .img-box::after {
   content: "";
   position: absolute;
-  /* Responsive sizing for animation border */
-  width: clamp(300px, 40vw, 500px);
-  height: clamp(300px, 40vw, 500px);
+  width: 300px;
+  height: 300px;
   background: conic-gradient(transparent, transparent, transparent, #3cd2fbaa);
   transform: rotate(0deg);
   animation: rotate-border 10s linear infinite;
@@ -149,34 +92,28 @@ body.light .card {
   mix-blend-mode: lighten;
 }
 
-/* Media queries for additional responsive adjustments */
-@media (max-width: 640px) {
+/* Media queries for larger screens */
+@media (min-width: 641px) {
   .home-img .img-box {
-    width: 280px;
-    height: 280px;
-    margin: 0 auto;
+    width: min(45vw, 450px);
+    height: min(45vw, 450px);
   }
 
   .home-img .img-box::before,
   .home-img .img-box::after {
-    width: 300px;
-    height: 300px;
+    width: min(50vw, 500px);
+    height: min(50vw, 500px);
   }
 
   .home-img .img-box .img-item img {
-    width: 85%;
+    width: 82%;
   }
 }
 
-@media (min-width: 641px) and (max-width: 1024px) {
-  .home-img .img-box {
-    width: min(35vw, 350px);
-    height: min(35vw, 350px);
-  }
-
+@media (min-width: 1024px) {
   .home-img .img-box::before,
   .home-img .img-box::after {
-    width: min(40vw, 400px);
-    height: min(40vw, 400px);
+    width: min(45vw, 550px);
+    height: min(45vw, 550px);
   }
 }

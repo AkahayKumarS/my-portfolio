@@ -230,9 +230,9 @@ const Home = () => {
           >
             <div className="relative w-full aspect-square max-w-[280px] sm:max-w-md mx-auto">
               <div
-                className={`absolute -inset-4 ${
+                className={`absolute -inset-2 sm:-inset-3 lg:-inset-4 ${
                   theme === "light" ? "bg-blue-400/30" : "bg-blue-500/30"
-                } rounded-full blur-3xl`}
+                } rounded-full blur-xl sm:blur-2xl lg:blur-3xl transition-all duration-300`}
               />
               <div className="home-img">
                 <div className="img-box">

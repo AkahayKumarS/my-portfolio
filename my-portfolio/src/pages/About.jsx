@@ -239,22 +239,24 @@ const About = () => {
           {/* Content Column */}
           <div className="lg:col-span-7">
             {/* Tabs Navigation */}
-            <div className="flex space-x-2 mb-8 overflow-x-auto">
-              {tabs.map((tab) => (
-                <button
-                  key={tab.id}
-                  onClick={() => setActiveTab(tab.id)}
-                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
-                    activeTab === tab.id
-                      ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white "
-                      : isDark
-                      ? "text-gray-400 hover:text-white hover:bg-gray-800"
-                      : "text-gray-600 hover:text-gray-900 hover:bg-gray-100"
-                  }`}
-                >
-                  {tab.label}
-                </button>
-              ))}
+            <div className="mt-4 sm:mt-6 md:mt-0">
+              <div className="flex space-x-2 mb-8 overflow-x-auto pb-2 scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-transparent">
+                {tabs.map((tab) => (
+                  <button
+                    key={tab.id}
+                    onClick={() => setActiveTab(tab.id)}
+                    className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 whitespace-nowrap ${
+                      activeTab === tab.id
+                        ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-md"
+                        : isDark
+                        ? "text-gray-400 hover:text-white hover:bg-gray-800"
+                        : "text-gray-600 hover:text-gray-900 hover:bg-gray-100"
+                    }`}
+                  >
+                    {tab.label}
+                  </button>
+                ))}
+              </div>
             </div>
 
             {/* Tab Content */}

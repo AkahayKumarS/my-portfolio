@@ -9,24 +9,24 @@ const artworks = [
     title: "Virat Kohli",
     image: "./img/artworks/Kohli1.jpeg",
     description:
-      "A vibrant digital painting capturing the beauty of a sunset over the mountains.",
-    category: "Digital Art",
+      "A stunning portrait of Virat Kohli, capturing his intense focus and passion for cricket.",
+    category: "Portrait",
   },
   {
     id: 2,
-    title: "Ocean Dreams",
+    title: "Thalapathy Vijay",
     image: "/img/artworks/Thalapathy.jpeg",
     description:
-      "A surreal depiction of the ocean with vibrant colors and abstract shapes.",
-    category: "Digital Art",
+      "A powerful portrayal of Thalapathy Vijay, highlighting his charm, legendary screen presence.",
+    category: "Portrait",
   },
   {
     id: 3,
-    title: "Forest Whispers",
+    title: "Golden Sunset Serenity",
     image: "/img/artworks/sunsetart.jpeg",
     description:
-      "A detailed illustration of a mystical forest with glowing flora and fauna.",
-    category: "Illustration",
+      "A breathtaking painting of a sunset, blending warm hues to create a peaceful and mesmerizing scene.",
+    category: "Canvas Painting",
   },
 ];
 

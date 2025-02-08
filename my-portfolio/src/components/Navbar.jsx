@@ -181,7 +181,7 @@ const Navbar = () => {
                     : "text-gray-600 hover:text-gray-900 hover:bg-gray-100"
                 }`}
               >
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-baseline space-x-3">
                   <span>Switch to {isDark ? "Light" : "Dark"} Mode</span>
                   {isDark ? <Sun size={18} /> : <Moon size={18} />}
                 </div>
