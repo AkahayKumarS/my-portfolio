@@ -224,14 +224,14 @@ const About = () => {
           >
             <div className="relative group">
               <div
-                className={`absolute inset-4 ${
+                className={`absolute inset-2 md:inset-4 ${
                   isDark ? "bg-blue-400/30" : "bg-blue-500/30"
-                } rounded-xl blur-3xl transition-all duration-300 group-hover:bg-blue-500/40`}
+                } rounded-xl blur-2xl md:blur-3xl transition-all duration-300 group-hover:bg-blue-500/40`}
               />
               <img
                 src="./img/profile.png"
                 alt="Profile"
-                className="relative rounded-xl shadow-2xl w-72 mx-auto transform transition-transform duration-300 group-hover:scale-[1.02]"
+                className="relative rounded-xl shadow-2xl w-52 md:w-72 mx-auto transform transition-transform duration-300 group-hover:scale-[1.02]"
               />
             </div>
           </motion.div>
