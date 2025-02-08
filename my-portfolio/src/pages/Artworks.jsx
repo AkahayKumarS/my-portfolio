@@ -28,6 +28,30 @@ const artworks = [
       "A breathtaking painting of a sunset, blending warm hues to create a peaceful and mesmerizing scene.",
     category: "Canvas Painting",
   },
+  {
+    id: 4,
+    title: "Geometrical Symphony",
+    image: "/img/artworks/geometrical_design.png",
+    description:
+      "An abstract masterpiece featuring intricate geometric patterns with a modern artistic touch.",
+    category: "Digital Art",
+  },
+  {
+    id: 5,
+    title: "Puneeth Rajkumar",
+    image: "/img/artworks/PuneethRajkumar.jpeg",
+    description:
+      "A heartfelt tribute to Puneeth Rajkumar, capturing his charisma and inspiring presence on screen.",
+    category: "Portrait",
+  },
+  {
+    id: 6,
+    title: "MS Dhoni",
+    image: "/img/artworks/MSD.jpeg",
+    description:
+      "A striking artwork of MS Dhoni, showcasing his calm demeanor and legendary cricketing legacy.",
+    category: "Portrait",
+  },
 ];
 
 const categories = ["All", ...new Set(artworks.map((art) => art.category))];

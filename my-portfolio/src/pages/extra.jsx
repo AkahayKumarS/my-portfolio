@@ -5,7 +5,8 @@ import About from "./About";
 import Projects from "./Projects";
 import Artworks from "./Artworks";
 import ContactMe from "./ContactMe";
-
+import { CIcon } from "@coreui/icons-react";
+import { cibLeetcode } from "@coreui/icons";
 import {
   ArrowRight,
   Github,
@@ -209,9 +210,20 @@ const Home = () => {
                   isDark
                     ? "bg-gray-800 text-gray-300 hover:text-blue-400 hover:bg-gray-700"
                     : "bg-blue-100 text-blue-700 hover:text-blue-800 hover:bg-blue-200"
-                } shadow-md hover:shadow-lg`}
+                } shadow-md hover:shadow-lg flex items-center justify-center group`}
               >
-                <img src="./img/leetcode.png" alt="leetcode" />
+                <CIcon
+                  icon={cibLeetcode}
+                  size={20}
+                  className={`${
+                    isDark
+                      ? "text-gray-300 group-hover:text-blue-400"
+                      : "text-blue-700 group-hover:text-blue-800"
+                  } transition-colors duration-500`}
+                  style={{
+                    fill: "currentColor",
+                  }}
+                />
               </motion.a>
             </motion.div>
           </motion.div>

@@ -171,21 +171,26 @@ const Home = () => {
             >
               {[
                 {
-                  Icon: Github,
+                  imgUrl: "./img/github.png",
                   href: "https://github.com/AkahayKumarS",
                   label: "GitHub",
                 },
                 {
-                  Icon: Linkedin,
+                  imgUrl: "./img/linkedin.png",
                   href: "https://www.linkedin.com/in/akshaya-kumar-s/",
                   label: "LinkedIn",
                 },
                 {
-                  Icon: Instagram,
+                  imgUrl: "./img/instagram.png",
                   href: "https://www.instagram.com/akshaykumars836/",
                   label: "Instagram",
                 },
-              ].map(({ Icon, href, label }) => (
+                {
+                  imgUrl: "./img/leetcode.png",
+                  href: "https://leetcode.com/u/AkshayKumarS9108/",
+                  label: "Leetcode",
+                },
+              ].map(({ imgUrl, href, label }) => (
                 <motion.a
                   key={label}
                   href={href}
@@ -194,30 +199,13 @@ const Home = () => {
                   whileTap={{ scale: 0.95 }}
                   className={`p-2.5 sm:p-3 rounded-xl transition-all duration-500 ${
                     isDark
-                      ? "bg-gray-800 text-gray-300 hover:text-blue-400 hover:bg-gray-700"
-                      : "bg-blue-100 text-blue-700 hover:text-blue-800 hover:bg-blue-200"
+                      ? "bg-gray-800 hover:bg-gray-700"
+                      : "bg-blue-100 hover:bg-blue-200"
                   } shadow-md hover:shadow-lg`}
                 >
-                  <Icon size={18} className="sm:w-5 sm:h-5" />
+                  <img src={imgUrl} alt={label} className="lg:w-6 lg:h-6" />
                 </motion.a>
               ))}
-              <motion.a
-                href="https://leetcode.com/u/AkshayKumarS9108/"
-                target="_blank"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-                className={`p-2.5 sm:p-3 w-10 sm:w-11 rounded-xl transition-all duration-500 ${
-                  isDark
-                    ? "bg-gray-800 text-gray-300 hover:text-blue-400 hover:bg-gray-700"
-                    : "bg-blue-100 text-blue-700 hover:text-blue-800 hover:bg-blue-200"
-                } shadow-md hover:shadow-lg`}
-              >
-                <img
-                  src="./img/leetcode.png"
-                  alt="leetcode"
-                  className="w-full h-auto"
-                />
-              </motion.a>
             </motion.div>
           </motion.div>
 
