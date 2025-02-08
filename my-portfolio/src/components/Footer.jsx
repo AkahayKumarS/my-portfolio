@@ -177,7 +177,7 @@ const Footer = () => {
           {/* Contact Info */}
           <div className="text-center md:text-left">
             <h3
-              className={`text-lg font-semibbol mb-4 ${
+              className={`text-lg font-semibold mb-4 ${
                 isDark ? "text-white" : "text-gray-900"
               }`}
             >
@@ -199,13 +199,14 @@ const Footer = () => {
                   Icon: MapPin,
                   content:
                     "Kundapura Taluk, Udupi District, Karnataka - 576222",
-                  href: null,
+                  href: "https://maps.app.goo.gl/Eg7Vvf5gC6qQoZpT7",
                 },
               ].map(({ Icon, content, href }) =>
                 href ? (
                   <a
                     key={content}
                     href={href}
+                    target="_blank"
                     className={`flex items-center justify-center md:justify-start space-x-3 transition-colors duration-500 ${
                       isDark
                         ? "text-gray-400 hover:text-blue-400"

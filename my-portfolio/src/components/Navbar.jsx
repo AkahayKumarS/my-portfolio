@@ -43,30 +43,23 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3">
+          <Link to="/" className="flex items-center space-x-1">
+            <img src="./img/logo/logo3.png" alt="logo" className="w-20 h-20" />
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-blue-500/20"
+              className={`flex items-center`}
             >
-              <span className="text-white text-xl font-bold">A</span>
-            </motion.div>
-            <div className="hidden sm:block">
-              <h1
-                className={`text-xl font-bold ${
-                  isDark ? "text-white" : "text-gray-900"
-                }`}
-              >
-                Akshaya Kumar S
-              </h1>
               <span
-                className={`text-sm ${
-                  isDark ? "text-gray-400" : "text-gray-600"
-                }`}
+                className={`text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r ${
+                  isDark
+                    ? "from-blue-500 to-purple-300"
+                    : "from-blue-600 to-purple-400"
+                } transition-colors duration-300`}
               >
-                Portfolio
+                AK
               </span>
-            </div>
+            </motion.div>
           </Link>
 
           {/* Desktop Navigation */}
