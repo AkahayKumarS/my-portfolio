@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext, useState } from "react";
 import { motion } from "framer-motion";
 import { ThemeContext } from "../ThemeContext"; // Import ThemeContext
 import {
@@ -20,10 +20,6 @@ const ContactMe = () => {
   });
   const [status, setStatus] = useState("");
   const [messageColor, setMessageColor] = useState("");
-
-  useEffect(() => {
-    console.log("Google Form URL:", import.meta.env.VITE_GOOGLE_FORM_URL);
-  }, []);
 
   // Define colors based on the theme
   const backgroundGradient =
