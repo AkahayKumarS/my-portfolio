@@ -102,7 +102,7 @@ const Home = () => {
               </span>
             </h1>
 
-            <div className="h-12 sm:h-16">
+            <div className="h-16">
               <motion.h2
                 className={`text-xl sm:text-2xl ${
                   isDark ? "text-gray-300" : "text-gray-700"
@@ -115,7 +115,7 @@ const Home = () => {
                 <span
                   className={`${
                     isDark ? "text-indigo-400" : "text-indigo-600"
-                  }`}
+                  } `}
                 >
                   {typedSkill}
                 </span>
