@@ -96,7 +96,7 @@ const Artworks = () => {
                 theme === "light"
                   ? "from-blue-600 to-purple-600"
                   : "from-blue-500 to-purple-500"
-              } transition-colors duration-300 mb-0 pb-2`}
+              } transition-colors duration-300 sm:pb-2`}
             >
               My Artworks
             </h1>
@@ -110,7 +110,7 @@ const Artworks = () => {
           />
           <p
             className={`${
-              isDark ? "text-gray-300" : "text-gray-600"
+              isDark ? "text-gray-400" : "text-gray-600"
             } max-w-2xl mx-auto text-base sm:text-lg`}
           >
             A collection of my creative works, showcasing various styles and

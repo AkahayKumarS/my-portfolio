@@ -121,7 +121,7 @@ const ContactMe = () => {
                 theme === "light"
                   ? "from-blue-600 to-purple-600"
                   : "from-blue-500 to-purple-500"
-              } transition-colors duration-300 mb-1`}
+              } transition-colors duration-300`}
             >
               Get in Touch
             </h1>
@@ -135,7 +135,7 @@ const ContactMe = () => {
           />
           <p
             className={`${
-              theme === "light" ? "text-gray-600" : "text-gray-300"
+              theme === "light" ? "text-gray-600" : "text-gray-400"
             } max-w-2xl mx-auto text-base sm:text-lg`}
           >
             Have a question or want to collaborate? Feel free to reach out! I'm

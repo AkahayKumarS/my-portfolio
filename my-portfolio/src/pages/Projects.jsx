@@ -101,7 +101,7 @@ const Projects = () => {
                 theme === "light"
                   ? "from-blue-600 to-purple-600"
                   : "from-blue-500 to-purple-500"
-              } transition-colors duration-300 mb-0 pb-2`}
+              } transition-colors duration-300 sm:pb-2`}
             >
               My Projects
             </h1>
@@ -115,8 +115,8 @@ const Projects = () => {
           />
           <p
             className={`${
-              theme === "light" ? "text-gray-600" : "text-gray-300"
-            } max-w-2xl mx-auto`}
+              theme === "light" ? "text-gray-600" : "text-gray-400"
+            } max-w-2xl mx-auto text-base sm:text-lg`}
           >
             Here are some of my featured projects that showcase my skills in web
             development, blockchain technology, and full-stack applications.

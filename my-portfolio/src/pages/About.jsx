@@ -199,7 +199,7 @@ const About = () => {
               } mr-2 sm:mr-3`}
             />
 
-            <h1 className={`text-3xl sm:text-5xl font-bold ${iconColor} mb-1`}>
+            <h1 className={`text-3xl sm:text-5xl font-bold ${iconColor}`}>
               About Me
             </h1>
           </div>
