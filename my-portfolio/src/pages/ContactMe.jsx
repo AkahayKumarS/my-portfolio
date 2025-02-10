@@ -136,7 +136,7 @@ const ContactMe = () => {
           <p
             className={`${
               theme === "light" ? "text-gray-600" : "text-gray-300"
-            } max-w-2xl mx-auto`}
+            } max-w-2xl mx-auto text-base sm:text-lg`}
           >
             Have a question or want to collaborate? Feel free to reach out! I'm
             always open to new opportunities and ideas.
