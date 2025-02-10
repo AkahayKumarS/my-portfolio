@@ -92,12 +92,12 @@ const Projects = () => {
         >
           <div className="flex items-center justify-center mb-4">
             <FolderKanban
-              className={`w-8 h-8 ${
+              className={`w-6 h-6 sm:w-8 sm:h-8 ${
                 theme === "dark" ? "text-blue-400" : "text-blue-600"
-              } mr-3`}
+              } mr-2 sm:mr-3`}
             />
             <h1
-              className={`text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r ${
+              className={`text-3xl sm:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r ${
                 theme === "light"
                   ? "from-blue-600 to-purple-600"
                   : "from-blue-500 to-purple-500"
@@ -107,11 +107,11 @@ const Projects = () => {
             </h1>
           </div>
           <div
-            className={`w-24 h-1 bg-gradient-to-r ${
+            className={`w-16 sm:w-24 h-0.5 sm:h-1 bg-gradient-to-r ${
               theme === "light"
                 ? "from-blue-600 to-purple-600"
                 : "from-blue-500 to-purple-500"
-            } mx-auto rounded-full mb-6`}
+            } mx-auto rounded-full mb-4 sm:mb-6`}
           />
           <p
             className={`${

@@ -223,7 +223,6 @@ const Home = () => {
               >
                 <CIcon
                   icon={cibLeetcode}
-                  size={20}
                   className={`${
                     isDark
                       ? "text-gray-300 group-hover:text-blue-400"

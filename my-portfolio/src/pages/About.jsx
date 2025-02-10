@@ -194,22 +194,24 @@ const About = () => {
         >
           <div className="flex items-center justify-center mb-4">
             <SquareUser
-              className={`w-8 h-8 ${
+              className={`w-6 h-6 sm:w-8 sm:h-8 ${
                 theme === "dark" ? "text-blue-400" : "text-blue-600"
-              } mr-3`}
+              } mr-2 sm:mr-3`}
             />
 
-            <h1 className={`text-5xl font-bold ${iconColor} mb-1`}>About Me</h1>
+            <h1 className={`text-3xl sm:text-5xl font-bold ${iconColor} mb-1`}>
+              About Me
+            </h1>
           </div>
           <div
-            className={`w-24 h-1 bg-gradient-to-r ${
+            className={`w-16 sm:w-24 h-0.5 sm:h-1 bg-gradient-to-r ${
               theme === "light"
                 ? "from-blue-600 to-purple-600"
                 : "from-blue-500 to-purple-500"
-            } mx-auto rounded-full mb-6`}
+            } mx-auto rounded-full mb-4 sm:mb-6`}
           />
           <div
-            className={`max-w-3xl mx-auto text-lg ${
+            className={`max-w-3xl mx-auto text-base sm:text-lg ${
               isDark ? "text-gray-400" : "text-gray-600"
             }`}
           >
@@ -277,7 +279,7 @@ const About = () => {
                 {activeTab === "overview" && (
                   <div className="space-y-6">
                     <p
-                      className={`text-lg ${
+                      className={`text-base sm:text-lg ${
                         isDark ? "text-gray-300" : "text-gray-700"
                       }`}
                     >
