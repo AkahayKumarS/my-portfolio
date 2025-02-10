@@ -60,10 +60,10 @@ const Footer = () => {
             <div className="flex items-center justify-center md:justify-start space-x-2">
               <div
                 className={`w-10 h-10 ${
-                  isDark ? "bg-blue-500" : "bg-sky-500"
+                  isDark ? "bg-blue-400" : "bg-sky-400"
                 } rounded-lg flex items-center justify-center transform hover:scale-105 transition-transform`}
               >
-                <span className="text-white text-xl font-bold">A</span>
+                <span className="text-white text-xl font-bold">AK</span>
               </div>
               <h2
                 className={`text-xl font-bold ${

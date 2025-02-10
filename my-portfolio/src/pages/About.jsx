@@ -21,7 +21,11 @@ const About = () => {
   const { theme } = useContext(ThemeContext);
   const isDark = theme === "dark";
   const [activeTab, setActiveTab] = useState("overview");
-  const iconColor = theme === "light" ? "text-blue-600" : "text-blue-400";
+  const iconColor = `bg-clip-text text-transparent bg-gradient-to-r  ${
+    theme === "dark"
+      ? "from-blue-500 to-purple-500"
+      : "from-blue-600 to-purple-600"
+  } transition-colors duration-300`;
 
   const [selectedCertificate, setSelectedCertificate] = useState(null);
 
@@ -195,11 +199,13 @@ const About = () => {
               } mr-3`}
             />
 
-            <h1 className={`text-5xl font-bold ${iconColor} mb-4`}>About Me</h1>
+            <h1 className={`text-5xl font-bold ${iconColor} mb-1`}>About Me</h1>
           </div>
           <div
-            className={`w-24 h-1 ${
-              theme === "light" ? "bg-blue-600" : "bg-blue-400"
+            className={`w-24 h-1 bg-gradient-to-r ${
+              theme === "light"
+                ? "from-blue-600 to-purple-600"
+                : "from-blue-500 to-purple-500"
             } mx-auto rounded-full mb-6`}
           />
           <div

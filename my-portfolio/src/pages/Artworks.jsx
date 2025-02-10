@@ -73,7 +73,7 @@ const Artworks = () => {
       className={`min-h-screen ${
         isDark
           ? "bg-gradient-to-b from-gray-900 to-gray-800"
-          : "bg-gradient-to-b from-gray-50 to-white"
+          : "bg-gradient-to-b from-blue-50 to-white"
       } py-20 px-4 transition-colors duration-500`}
     >
       <div className="max-w-6xl mx-auto">
@@ -92,16 +92,20 @@ const Artworks = () => {
               } mr-3`}
             />
             <h1
-              className={`text-5xl font-bold ${
-                theme === "light" ? "text-blue-600" : "text-blue-400"
-              } mb-4`}
+              className={`text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r ${
+                theme === "light"
+                  ? "from-blue-600 to-purple-600"
+                  : "from-blue-500 to-purple-500"
+              } transition-colors duration-300 mb-0 pb-2`}
             >
               My Artworks
             </h1>
           </div>
           <div
-            className={`w-24 h-1 ${
-              theme === "light" ? "bg-blue-600" : "bg-blue-400"
+            className={`w-24 h-1 bg-gradient-to-r ${
+              theme === "light"
+                ? "from-blue-600 to-purple-600"
+                : "from-blue-500 to-purple-500"
             } mx-auto rounded-full mb-6`}
           />
           <p

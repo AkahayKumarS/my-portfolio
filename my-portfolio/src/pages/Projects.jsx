@@ -63,7 +63,7 @@ const Projects = () => {
 
   const backgroundGradient =
     theme === "light"
-      ? "bg-gradient-to-b from-gray-50 to-white"
+      ? "bg-gradient-to-b from-blue-50 to-white"
       : "bg-gradient-to-b from-gray-900 to-gray-800";
   const cardBackground = theme === "light" ? "bg-white" : "bg-gray-800";
   const textColor = theme === "light" ? "text-gray-800" : "text-gray-200";
@@ -97,16 +97,20 @@ const Projects = () => {
               } mr-3`}
             />
             <h1
-              className={`text-5xl font-bold ${
-                theme === "light" ? "text-blue-600" : "text-blue-400"
-              } mb-4`}
+              className={`text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r ${
+                theme === "light"
+                  ? "from-blue-600 to-purple-600"
+                  : "from-blue-500 to-purple-500"
+              } transition-colors duration-300 mb-0 pb-2`}
             >
               My Projects
             </h1>
           </div>
           <div
-            className={`w-24 h-1 ${
-              theme === "light" ? "bg-blue-600" : "bg-blue-400"
+            className={`w-24 h-1 bg-gradient-to-r ${
+              theme === "light"
+                ? "from-blue-600 to-purple-600"
+                : "from-blue-500 to-purple-500"
             } mx-auto rounded-full mb-6`}
           />
           <p

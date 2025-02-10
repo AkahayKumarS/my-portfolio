@@ -53,8 +53,8 @@ const Navbar = () => {
               <span
                 className={`text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r ${
                   isDark
-                    ? "from-blue-500 to-purple-300"
-                    : "from-blue-600 to-purple-400"
+                    ? "from-blue-500 to-purple-500"
+                    : "from-blue-600 to-purple-600"
                 } transition-colors duration-300`}
               >
                 AK

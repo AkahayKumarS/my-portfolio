@@ -87,11 +87,17 @@ const Home = () => {
 
             <h1
               className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold ${
-                isDark ? "text-white" : "text-gray-900"
+                isDark ? "text-gray-300" : "text-gray-900"
               } mb-4 transition-colors duration-500`}
             >
               Hi, I'm{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-400">
+              <span
+                className={`text-transparent bg-clip-text bg-gradient-to-r ${
+                  isDark
+                    ? "from-blue-500 via-cyan-400 to-purple-500"
+                    : "from-blue-600 via-cyan-500 to-purple-600"
+                } transition-colors duration-500`}
+              >
                 Akshaya Kumar S
               </span>
             </h1>
@@ -107,13 +113,15 @@ const Home = () => {
               >
                 My skills are{" "}
                 <span
-                  className={`${isDark ? "text-pink-400" : "text-violet-500"}`}
+                  className={`${
+                    isDark ? "text-indigo-400" : "text-indigo-600"
+                  }`}
                 >
                   {typedSkill}
                 </span>
                 <span
                   className={`${
-                    isDark ? "text-pink-300" : "text-violet-400"
+                    isDark ? "text-indigo-300" : "text-indigo-400"
                   } animate-pulse`}
                 >
                   |
