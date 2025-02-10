@@ -60,7 +60,7 @@ const Home = () => {
           : "bg-gradient-to-br from-blue-50 via-white to-blue-100"
       } transition-colors duration-500 pt-16`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-16 pb-8 sm:pb-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 pt-8 sm:pt-16 pb-8 sm:pb-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -115,7 +115,7 @@ const Home = () => {
                 <span
                   className={`${
                     isDark ? "text-indigo-400" : "text-indigo-600"
-                  } `}
+                  }`}
                 >
                   {typedSkill}
                 </span>
