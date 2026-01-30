@@ -30,11 +30,11 @@ const artworks = [
   },
   {
     id: 4,
-    title: "Geometrical Symphony",
-    image: "/img/artworks/geometrical_design.png",
+    title: "Virat Kohli",
+    image: "/img/artworks/Kohli2.jpeg",
     description:
-      "An abstract masterpiece featuring intricate geometric patterns with a modern artistic touch.",
-    category: "Digital Art",
+      "Virat Kohli's 85th International Century captured on Handmade Canvas.",
+    category: "Portrait",
   },
   {
     id: 5,
