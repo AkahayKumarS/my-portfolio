@@ -34,7 +34,7 @@ const artworks = [
     image: "/img/artworks/Kohli2.jpeg",
     description:
       "Virat Kohli's 85th International Century captured on Handmade Canvas.",
-    category: "Portrait",
+    category: "Canvas Painting",
   },
   {
     id: 5,
